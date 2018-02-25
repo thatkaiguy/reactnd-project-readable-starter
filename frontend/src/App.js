@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 // components
+import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Segment } from 'semantic-ui-react'
 import CategoryList from './components/CategoryList'
 import PostList from './components/PostList'
 // misc
@@ -27,14 +28,23 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
-        <p className="App-intro">
-          
-        </p>
-        <CategoryList items={category.items} loading={category.loading} />
-        <PostList items={post.items} loading={post.loading} />
+        <Menu fixed='top' inverted>
+          <Container>
+            <Menu.Item as='a' header>
+              Project Readable
+            </Menu.Item>
+            <Menu.Item as='a'>Home</Menu.Item>
+            <Menu.Item as='a'>Categories</Menu.Item>
+            <Menu.Item as='a'>Posts</Menu.Item>
+          </Container>
+        </Menu>
+
+        <Container text style={{ marginTop: '3em' }}>
+          <CategoryList items={category.items} loading={category.loading} />
+        </Container>
+        <Container text style={{ marginTop: '3em' }}>
+          <PostList items={post.items} loading={post.loading} />
+        </Container>
       </div>
     );
   }

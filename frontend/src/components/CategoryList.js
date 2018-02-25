@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button, Header } from 'semantic-ui-react'
 
 class CategoryList extends Component {
   render() {
@@ -9,13 +10,14 @@ class CategoryList extends Component {
     }
 
     return (
-      <ul className='category-list'>
+      <div>
+        <Header>Categories</Header>
         {items.map((category) => (
-          <li key={category.name}>
+          <Button>
             {category.name}
-          </li>
+          </Button>
         ))}
-      </ul>
+      </div>
     )
   }
 }

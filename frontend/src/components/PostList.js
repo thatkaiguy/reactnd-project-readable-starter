@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Header } from 'semantic-ui-react'
 import PostListItem from './PostListItem'
 
 class PostList extends Component {
@@ -10,13 +11,12 @@ class PostList extends Component {
     }
 
     return (
-      <ul className='post-list'>
+      <div>
+        <Header>Posts</Header>
         {items.map((post) => (
-          <li key={post.id}>
-            <PostListItem {...post} />
-          </li>
+          <PostListItem {...post} />
         ))}
-      </ul>
+      </div>
     )
   }
 }
